@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="images/windows-logo.png" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Inter', 'sans'],
+                            serif: ['Oswald', 'serif'],
+                            mono: ['Cambria', 'mono'],
+                        },
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav
+                class="navbar navbar-expand-lg shadow-md py-2 bg-blue-50 relative flex items-center w-full justify-between">
+                <div class="px-6 w-full flex flex-wrap items-center justify-between">
+                    <div>
+                        <span class="text-2xl cursor-pointer">
+                            <img class="h-10 inline" src="images/windows-logo.png">
+                            Windows
+                        </span>
+                    </div>
+                    <button
+                        class="mr-2 border-0 bg-transparent py-2 text-xl leading-none transition-shadow duration-150 ease-in-out hover:text-neutral-700 focus:text-neutral-700 lg:hidden"
+                        type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
+                        aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
+                        <ion-icon class="text-3xl lg-hidden" name="menu-outline" onclick=Menu(this)></ion-icon>
+                    </button>
+                    <div class="!visible hidden basis-[100%] items-center lg:!flex lg:basis-auto"
+                        id="navbarSupportedContentY" data-te-collapse-item>
+                        <ul class="mr-auto flex flex-col items-center lg:flex-row lg:items-start" data-te-navbar-nav-ref>
+                            <li data-te-nav-item-ref>
+                                <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                    href="index.html" data-te-nav-link-ref data-te-ripple-init
+                                    data-te-ripple-color="light">Home</a>
+                            </li>
+                            <li data-te-nav-item-ref>
+                                <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                    href="imagens.html" data-te-nav-link-ref data-te-ripple-init
+                                    data-te-ripple-color="light">Imagens</a>
+                            </li>
+                            <li data-te-nav-item-ref>
+                                <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                    href="videos.html" data-te-nav-link-ref data-te-ripple-init
+                                    data-te-ripple-color="light">Vídeos</a>
+                            </li>
+                            <li data-te-nav-item-ref>
+                                <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                    href="tabelas.html" data-te-nav-link-ref data-te-ripple-init
+                                    data-te-ripple-color="light">Tabelas</a>
+                            </li>
+                            <li data-te-nav-item-ref>
+                                <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                    href="cadastro.html" data-te-nav-link-ref data-te-ripple-init
+                                    data-te-ripple-color="light">Cadastro</a>
+                            </li>
+                            <li data-te-nav-item-ref>
+                                <button type="button"
+                                    class="inline-block rounded bg-blue-600  px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+                                    data-te-toggle="modal" data-te-target="#exampleModal" data-te-ripple-init
+                                    data-te-ripple-color="light">
+                                    Login
+                                </button>
+                                <div data-te-modal-init
+                                    class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+                                    id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div data-te-modal-dialog-ref
+                                        class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+                                        <div
+                                            class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+                                            <div
+                                                class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                                                <h5 class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+                                                    id="exampleModalLabel">
+                                                    Faça o Login
+                                                </h5>
+                                                <button type="button"
+                                                    class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                                                    data-te-modal-dismiss aria-label="Close">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                        stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M6 18L18 6M6 6l12 12" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="relative flex-auto p-4 m-auto" data-te-modal-body-ref>
+                                                <section class="">
+                                                    <div class="">
+                                                        <div class="g-6 flex flex-wrap items-center justify-center">
+                                                            <div class="">
+                                                                <form>
+                                                                    <div class="relative mb-6" data-te-input-wrapper-init>
+                                                                        <input type="text"
+                                                                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                                            id="exampleFormControlInput2"
+                                                                            placeholder="Email" />
+                                                                        <label for="exampleFormControlInput2"
+                                                                            class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+                                                                            Email
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="relative mb-6" data-te-input-wrapper-init>
+                                                                        <input type="password"
+                                                                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                                                                            id="exampleFormControlInput22"
+                                                                            placeholder="Senha" />
+                                                                        <label for="exampleFormControlInput22"
+                                                                            class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200">
+                                                                            Senha
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="text-center lg:text-center">
+                                                                        <button type="button"
+                                                                            class="inline-block rounded bg-blue-600 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+                                                                            data-te-ripple-init
+                                                                            data-te-ripple-color="light">
+                                                                            Login
+                                                                        </button>
+                                                                        <p class="mt-2 mb-0 pt-1 text-sm font-semibold">
+                                                                            Não possui uma conta?
+                                                                            <a href="cadastro.html"
+                                                                                class="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">Cadastre-se</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div
+                                                class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+                                                <button type="button"
+                                                    class="inline-block rounded bg-primary-100 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+                                                    data-te-modal-dismiss data-te-ripple-init data-te-ripple-color="light">
+                                                    Fechar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container px-5 py-2 mx-auto lg:pt-5 lg:px-32" id="container-main">
+                <section class="overflow-hidden text-gray-700 mb-5 pb-5">
+                    <h1 class="text-center font-mono pt-5 leading-tight text-5xl mt-0 mb-2 text-black">
+                        Cadastro
+                    </h1>
+                    <div class="m-auto block p-6 rounded-lg shadow-lg bg-white max-w-md">
+                        <form>
+                            <div class="form-group mb-6">
+                                <label for="text" class="block text-sm font-medium text-gray-700">Nome</label>
+                                <input type="text" class="form-control block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    id="exampleInput126" placeholder="Nome">
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="text" class="block text-sm font-medium text-gray-700">Telefone</label>
+                                <input type="text" class="form-control block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    id="exampleInput126" placeholder="Telefone">
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" class="form-control block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    id="exampleInput125" placeholder="Email">
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+                                <input type="password" class="form-control block
+                            w-full
+                            px-3
+                            py-1.5
+                            text-base
+                            font-normal
+                            text-gray-700
+                            bg-white bg-clip-padding
+                            border border-solid border-gray-300
+                            rounded
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    id="exampleInput126" placeholder="Senha">
+                            </div>
+                            <div class="form-group mb-6">
+                                <label for="birthDate" class="block text-sm font-medium text-gray-700">Nascimento</label>
+                                <input type="date" class="form-control block 
+                            w-full 
+                            px-3 
+                            py-1.5 
+                            text-base 
+                            font-normal 
+                            text-gray-700 
+                            bg-white 
+                            bg-clip-padding 
+                            border border-solid border-gray-300 
+                            rounded 
+                            transition 
+                            ease-in-out 
+                            m-0 
+                            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                                    id="birthDate" name="birthDate">
+                            </div>
+                            <div class="form-group form-check text-center mb-6">
+                                <input type="checkbox"
+                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+                                    id="exampleCheck25" checked>
+                                <label class="form-check-label inline-block text-gray-800" for="exampleCheck25">Assine a
+                                    nossa newsletter</label>
+                            </div>
+                            <button type="submit" class="
+                            w-full
+                            px-6
+                            py-2.5
+                            bg-blue-600
+                            text-white
+                            font-medium
+                            text-xs
+                            leading-tight
+                            uppercase
+                            rounded
+                            shadow-md
+                            hover:bg-blue-700 hover:shadow-lg
+                            focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+                            active:bg-blue-800 active:shadow-lg
+                            transition
+                            duration-150
+                            ease-in-out">Cadastre-se</button>
+                        </form>
+                    </div>
+                </section>
+                <hr>
+            </div>
+        </main>
+        <footer class="text-center lg:text-left bg-blue-100 text-gray-600">
+            <div class="mx-6 py-10 text-center md:text-left">
+                <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="">
+                        <h6 class="
+                        uppercase
+                        font-semibold
+                        mb-4
+                        flex
+                        items-center
+                        justify-center
+                        md:justify-start
+                        ">
+                            <ion-icon class="mr-2" name="cube-outline"></ion-icon>
+                            Sobre
+                        </h6>
+                        <p>
+                            O Windows é um sistema operacional desenvolvido pela Microsoft.
+                        </p>
+                    </div>
+                    <div class="">
+                        <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                            Recursos
+                        </h6>
+                        <p class="mb-4 text-gray-600">
+                            Interface aprimorada
+                        </p>
+                        <p class="mb-4 text-gray-600">
+                            Integração Microsoft Teams
+                        </p>
+                        <p class="mb-4 text-gray-600">
+                            Suporte Android
+                        </p>
+                        <p class="text-gray-600">
+                            Atualizações automáticas
+                        </p>
+                    </div>
+                    <div class="">
+                        <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                            Novidades
+                        </h6>
+                        <p class="mb-4 text-gray-600">
+                            Windows 11
+                        </p>
+                        <p class="mb-4 text-gray-600">
+                            Atualizações de segurança
+                        </p>
+                        <p class="mb-4 text-gray-600">
+                            Melhorias Microsoft Store
+                        </p>
+                        <p class="text-gray-600">
+                            Suporte estendido Windows 10
+                        </p>
+                    </div>
+                    <div class="">
+                        <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
+                            Contato
+                        </h6>
+                        <p class="flex items-center justify-center md:justify-start mb-4">
+                            <ion-icon class="w-4 mr-4" name="home"></ion-icon>
+                            One Microsoft Way, Redmond, WA 98052
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start mb-4">
+                            <ion-icon class="w-4 mr-4" name="mail"></ion-icon>
+                            windows@microsoft.com
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start mb-4">
+                            <ion-icon class="w-4 mr-4" name="call"></ion-icon>
+                            (123) 456-7890
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-between items-center p-6 border-t border-gray-300 bg-blue-200">
+                <div class="text-center mb-4 lg:mb-0">
+                    <span>© 2023 Copyright:</span>
+                    <a class="text-gray-600 font-semibold" href="https://www.microsoft.com/pt-br/windows/?r=1">Windows</a>
+                </div>
+                <div class="flex flex-col items-start lg:items-center lg:flex-row">
+                    <div class="flex justify-center ml-4">
+                        <a class="mr-4" target="_blank" href="#">
+                            <ion-icon size="large" name="logo-facebook"></ion-icon>
+                        </a>
+                        <a class="mr-4" target="_blank" href="#">
+                            <ion-icon size="large" name="logo-twitter"></ion-icon>
+                        </a>
+                        <a class="mr-4" target="_blank" href="#">
+                            <ion-icon size="large" name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    </body>
+</html>
